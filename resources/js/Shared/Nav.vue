@@ -11,7 +11,7 @@
                 <Link class="text-blue-500 hover:underline" href="/contact" :class="{'font-bold underline': $page.url === '/contact'}">Contact</Link>
             </li>
             <li>
-                <Link class="text-blue-500 hover:underline" href="/service" :class="{'font-bold underline': $page.url === '/service'}">Service</Link>
+                <Link class="text-blue-500 hover:underline" href="/service" :class="{'font-bold underline': $page.component === 'Service'}">Service</Link>
             </li>
             <li>
                 <Link class="text-blue-500 hover:underline" href="/blog?foo=bar&baz=buz" :class="{'font-bold underline': $page.url.startsWith('/blog')}">Blog</Link>
