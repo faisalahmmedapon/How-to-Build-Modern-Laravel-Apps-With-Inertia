@@ -19,12 +19,14 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home',[
-        'time' => now()->toTimeString()
+        'username' => 'Faisal Ahmmed',
     ]);
 })->name('home');
 
 Route::get('/about', function () {
-    return Inertia::render('About');
+    return Inertia::render('About',[
+    'time' => now()->toTimeString()
+    ]);
 })->name('about');
 
 Route::get('/service', function () {

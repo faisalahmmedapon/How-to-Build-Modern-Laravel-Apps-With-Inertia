@@ -1,18 +1,25 @@
-<script setup>
+<script>
   //
-  import Nav from '../Shared/Nav.vue';
+  import Layout from '../Shared/Layout.vue';
+
+  export default {
+      components: {Layout},
+  }
 </script>
 
 <template>
-  <header>
-    <h1>Service</h1>
-  </header>
+    <Layout>
 
-  <main>
-      <Nav/>
-  </main>
+        <header>
+            <h1 class="text-4xl font-bold">Service</h1>
+        </header>
 
-  <footer>
+        <main>
+            <Nav/>
+        </main>
 
-  </footer>
+        <footer>
+
+        </footer>
+    </Layout>
 </template>
