@@ -1,6 +1,6 @@
 <template>
     <nav class="">
-        <ul class="flex list-disc space-x-4 list-inside">
+        <ul class="flex space-x-6">
 
             <!--dynamic navber-->
 
@@ -29,7 +29,7 @@
                 <NavLink href="/settings" :active="$page.component === 'Settings'">Settings</NavLink>
             </li>
             <li>
-                <NavLink href="/logout" :active="$page.Logout === 'Logout'">Logout</NavLink>
+                <NavLink href="/logout" method="post" :data="{ foo: 'bar' }" :active="$page.Logout === 'Logout'">Logout</NavLink>
             </li>
 
             <!--            in page navber-->

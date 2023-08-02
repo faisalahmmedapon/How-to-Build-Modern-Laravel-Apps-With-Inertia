@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -19,40 +20,52 @@ use Inertia\Inertia;
 // });
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+
+    return Inertia::render('Home', [
+        'title' => 'Home - My App',
+    ]);
 })->name('home');
 
 Route::get('/about', function () {
-    return Inertia::render('About');
+    return Inertia::render('About', [
+        'title' => 'About - My App',
+    ]);
 })->name('about');
 
 Route::get('/service', function () {
-    return Inertia::render('Service');
+    return Inertia::render('Service', [
+        'title' => 'Service - My App',
+    ]);
 })->name('service');
 
 Route::get('/contact', function () {
-    return Inertia::render('Contact');
+    return Inertia::render('Contact', [
+        'title' => 'Contact - My App',
+    ]);
 })->name('contact');
-
-Route::get('/service', function () {
-    return Inertia::render('Service');
-})->name('service');
 
 Route::get('/blog', function () {
 //    sleep(2);
-    return Inertia::render('Blog');
+    return Inertia::render('Blog', [
+        'title' => 'Blog - My App',
+    ]);
 })->name('blog');
 
 Route::get('/users', function () {
 //    sleep(2);
+    $users = User::paginate(20);
     return Inertia::render('Users', [
-        'time' => now()->toTimeString()
+        'time' => now()->toTimeString(),
+        'title' => 'Users - My App',
+        'users' => $users,
     ]);
 })->name('users');
 
 Route::get('/settings', function () {
 //    sleep(2);
-    return Inertia::render('Settings');
+    return Inertia::render('Settings', [
+        'title' => 'Settings - My App',
+    ]);
 })->name('settings');
 
 
